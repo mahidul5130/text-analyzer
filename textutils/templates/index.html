@@ -105,9 +105,14 @@
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+        <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2" onchange="handleCheckboxChange(this, 'lowercase');">
         <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
       </div>
+      
+      <div class="custom-control custom-switch">
+        <input type="checkbox" name="lowercase" class="custom-control-input" id="customSwitch8" onchange="handleCheckboxChange(this, 'fullcaps');">
+        <label class="custom-control-label" for="customSwitch8">Lowercase</label>
+      </div>      
 
       <div class="custom-control custom-switch">
         <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch3">

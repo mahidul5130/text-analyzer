@@ -15,6 +15,7 @@ def analyze(request):
         numberremover = request.POST.get('numberremover', False)
         reversetext = request.POST.get('reversetext', False)
         allspaceremover = request.POST.get('allspaceremover', False)
+        lowercase = request.POST.get('lowercase', False)
 
         analyzed = djtext
         params = {'purpose': '', 'analyzed_text': analyzed}
@@ -47,7 +48,11 @@ def analyze(request):
             analyzed = analyzed.replace(' ', '')
             params = {'purpose': 'Removed All Spaces', 'analyzed_text': analyzed}
 
-        if not (removepunc or fullcaps or extraspaceremover or newlineremover or numberremover or reversetext or allspaceremover):
+        if lowercase:
+            analyzed = analyzed.lower()
+            params = {'purpose': 'Converted to Lowercase', 'analyzed_text': analyzed}
+
+        if not (removepunc or fullcaps or extraspaceremover or newlineremover or numberremover or reversetext or allspaceremover or lowercase):
             return HttpResponse("Please select any operation and try again")
 
         return render(request, 'analyze.html', params)
