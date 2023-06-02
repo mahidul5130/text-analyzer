@@ -15,7 +15,7 @@ Text Analyzer is a Django project that provides various text analysis features. 
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/text-analyzer.git
+   git clone https://github.com/mahidul5130/text-analyzer.git
    ```
 
 2. Navigate to the project directory:
