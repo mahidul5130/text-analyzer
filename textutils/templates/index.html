@@ -115,14 +115,16 @@
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch4">
+        <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch4"
+          onchange="handleCheckboxChange(this, 'allspaceremover');">
         <label class="custom-control-label" for="customSwitch4">Extra Spaces Remover</label>
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" name="allspaceremover" class="custom-control-input" id="customSwitch7">
+        <input type="checkbox" name="allspaceremover" class="custom-control-input" id="customSwitch7"
+          onchange="handleCheckboxChange(this, 'extraspaceremover');">
         <label class="custom-control-label" for="customSwitch7">All Space Remover</label>
-      </div>      
+      </div>
 
       <div class="custom-control custom-switch">
         <input type="checkbox" name="numberremover" class="custom-control-input" id="customSwitch5">
@@ -133,7 +135,7 @@
         <input type="checkbox" name="reversetext" class="custom-control-input" id="customSwitch6">
         <label class="custom-control-label" for="customSwitch6">Reverse Text</label>
       </div>
-      
+
 
       <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
     </form>
@@ -154,6 +156,20 @@
 
     });
   </script>
+
+  <script>
+    function handleCheckboxChange(checkbox, otherCheckboxName) {
+      if (checkbox.checked) {
+        // Uncheck the other checkbox if it is checked
+        const otherCheckbox = document.getElementsByName(otherCheckboxName)[0];
+        if (otherCheckbox.checked) {
+          otherCheckbox.checked = false;
+        }
+      }
+    }
+  </script>
+
+
   <!-- Footer-->
   <footer class="footer">
     <div class="container">
