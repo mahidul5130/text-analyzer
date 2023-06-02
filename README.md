@@ -93,3 +93,10 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For any inquiries or suggestions, please feel free to reach out:
+
+- Email: mahidul5130@gmail.com
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/md-mahidul-haque-sijan-8519a5182/)
