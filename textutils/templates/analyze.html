@@ -71,9 +71,12 @@
 
 
   <div class="container">
-
-    <h1>Your Analyzed Text - {{ purpose }}</h1>
-
+    <h1>Your Analyzed Text</h1>
+    <ul>
+      {% for purpose in purposes %}
+      <li>{{ purpose }}</li>
+      {% endfor %}
+    </ul>
     <div style="position:relative;" class="bg-light">
       <p>
         <button id="corner-btn" class="btn btn-outline-primary" onclick="copy()">
@@ -83,6 +86,7 @@
       </p>
     </div>
   </div>
+
   <footer class="footer">
     <div class="container">
       <span class="text-light">&#169 2019 Textutils </span>

@@ -18,43 +18,44 @@ def analyze(request):
         lowercase = request.POST.get('lowercase', False)
 
         analyzed = djtext
-        params = {'purpose': '', 'analyzed_text': analyzed}
-
+        purposes = []
+        
         if removepunc:
             analyzed = ''.join(char for char in analyzed if char not in string.punctuation)
-            params = {'purpose': 'Removed Punctuations', 'analyzed_text': analyzed}
+            purposes.append('Removed Punctuations')
 
         if fullcaps:
             analyzed = analyzed.upper()
-            params = {'purpose': 'Changed to Uppercase', 'analyzed_text': analyzed}
+            purposes.append('Changed to Uppercase')
 
         if extraspaceremover:
             analyzed = ' '.join(analyzed.split())
-            params = {'purpose': 'Removed Extra Spaces', 'analyzed_text': analyzed}
+            purposes.append('Removed Extra Spaces')
 
         if newlineremover:
             analyzed = analyzed.replace('\n', '').replace('\r', '')
-            params = {'purpose': 'Removed Newlines', 'analyzed_text': analyzed}
+            purposes.append('Removed Newlines')
 
         if numberremover:
             analyzed = ''.join(char for char in analyzed if not char.isdigit())
-            params = {'purpose': 'Removed Numbers', 'analyzed_text': analyzed}
+            purposes.append('Removed Numbers')
 
         if reversetext:
             analyzed = analyzed[::-1]
-            params = {'purpose': 'Reversed Text', 'analyzed_text': analyzed}
+            purposes.append('Reversed Text')
 
         if allspaceremover:
             analyzed = analyzed.replace(' ', '')
-            params = {'purpose': 'Removed All Spaces', 'analyzed_text': analyzed}
+            purposes.append('Removed All Spaces')
 
         if lowercase:
             analyzed = analyzed.lower()
-            params = {'purpose': 'Converted to Lowercase', 'analyzed_text': analyzed}
+            purposes.append('Converted to Lowercase')
 
-        if not (removepunc or fullcaps or extraspaceremover or newlineremover or numberremover or reversetext or allspaceremover or lowercase):
+        if not purposes:
             return HttpResponse("Please select any operation and try again")
 
+        params = {'purposes': purposes, 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
     else:
         return HttpResponse("Invalid request method")
