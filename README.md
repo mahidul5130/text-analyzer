@@ -1,14 +1,8 @@
 # Text Analyzer
 
-Text Analyzer is a Django project that provides various text analysis features. It allows users to analyze and manipulate text in different ways. The main features include:
+Text Analyzer is a Django project that provides various text analysis features. It allows users to analyze and manipulate text in different ways, such as removing punctuations, converting to uppercase or lowercase, removing newlines and extra spaces, removing numbers, and reversing the text.
 
-- **Remove Punctuations**: Removes punctuations from the input text.
-- **Uppercase**: Converts the text to uppercase.
-- **Lowercase**: Converts the text to lowercase.
-- **Remove Newlines**: Removes newlines from the text.
-- **Remove Extra Spaces**: Removes extra spaces from the text.
-- **Remove Numbers**: Removes numbers from the text.
-- **Reverse Text**: Reverses the order of characters in the text.
+This project was initially based on the [TextUtils](https://github.com/CodeWithHarry/TextUtils.git) repository by [CodeWithHarry](https://github.com/CodeWithHarry), which provided the foundation for developing the Text Analyzer project.
 
 ## Installation
 
@@ -60,7 +54,7 @@ Text Analyzer is a Django project that provides various text analysis features. 
 
 ## Usage
 
-1. Open a web browser and navigate to `http://localhost:8000` to access the application.
+1. Open a web browser and navigate to `http://localhost:8000` to access the Text Analyzer application.
 
 2. Enter the text you want to analyze in the provided input field.
 
@@ -98,4 +92,4 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
