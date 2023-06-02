@@ -77,18 +77,26 @@
         <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
 
         <!-- Character Counter -->
+        <!-- Character and Word Counter -->
         <p>
           <span id="CharacterCount">0</span> Characters
+          <span id="WordCount">0</span> Words
           <script type="text/javascript">
             var exampleFormControlTextarea1 = document.getElementById("exampleFormControlTextarea1");
             var CharacterCount = document.getElementById("CharacterCount");
+            var WordCount = document.getElementById("WordCount");
 
             exampleFormControlTextarea1.addEventListener("keyup", function () {
-              var characters = exampleFormControlTextarea1.value.split('');
+              var inputText = exampleFormControlTextarea1.value;
+              var characters = inputText.split('');
+              var words = inputText.trim().split(/\s+/); // Splitting by whitespace characters
+
               CharacterCount.innerText = characters.length;
+              WordCount.innerText = words.length;
             });
           </script>
         </p>
+
       </div>
 
       <div class="custom-control custom-switch">
